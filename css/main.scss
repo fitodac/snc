@@ -1,0 +1,341 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+	// var(--plyr-video-control-background-hover,var(--plyr-color-main,var(--plyr-color-main,#00b2ff)))
+	--plyr-color-main: #9A0079;
+}
+
+
+body{
+	font-family: 'Barlow', sans-serif;
+	color: #252B3C;
+	line-height: 1.4;
+	@apply md:text-[17px];
+}
+
+
+.section-title{
+	@apply 
+	text-xl 
+	leading-tight
+	font-semibold 
+	uppercase 
+	select-none 
+	sm:text-2xl
+	sm:leading-tight
+	md:text-3xl
+	md:leading-none
+}
+
+.section-subtitle{
+	@apply
+	text-lg 
+	leading-tight 
+	font-semibold
+	uppercase
+	select-none
+	sm:text-xl
+	sm:leading-tight
+}
+
+
+
+
+/**
+POST CONTENT
+**/
+.post-content{
+
+	.wp-block{ @apply relative; }
+
+	.wp-block-page-title{
+		&.is-style-default{ @apply bg-pink; }
+		&.is-style-blue{ @apply bg-navy; }
+		&.is-style-purple{ @apply bg-purple-dark; }
+	}
+
+	.wp-block-hero.is-style-default .bar{ @apply bg-pink; }
+	.wp-block-hero.is-style-blue .bar{ @apply bg-navy; }
+	.wp-block-hero.is-style-purple .bar{ @apply bg-prod-inbrija; }
+
+	.wp-block-hero + .wp-block{
+		@apply mt-8;
+	}
+
+	.wp-block-paragraph{
+		.has-text-align-center{ @apply text-center; }
+		.has-text-align-right{ @apply text-right; }
+	}
+
+	.wp-block-heading{
+		@apply select-none;
+
+		h1{ @apply text-3xl font-semibold tracking-tight; }
+		h2{ @apply text-2xl font-semibold tracking-tight; }
+		h3{ @apply text-xl font-semibold; }
+		h4, h5{ @apply font-semibold; }
+	}
+
+
+	.wp-block-image{
+		figure{
+			@apply 
+			w-full
+			flex;
+
+			&.alignright{ @apply justify-end; }
+			&.aligncenter{ @apply justify-center; }
+			&.alignfull > img{ @apply w-full; }
+		}
+	}
+
+
+	.wp-block-carousel{
+		&.is-style-default{ @apply bg-pink-50; }
+		&.is-style-blue{ @apply bg-navy-50; }
+		&.is-style-purple{ @apply bg-purple-50; }
+	}
+}
+
+/** BANNERS **/
+
+.banner {
+	.text {
+		font-size: 40px;
+		line-height: 1.15em;
+		font-weight: 400;
+		color: white;
+	}
+	span.icon-link {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding: 6px;
+		border-radius: 8px;
+		background: #9a0079;
+	}
+}
+
+.banner-xeristar {
+	background: url('../img/bg-banner-xeristar.png') no-repeat center center;
+	min-height: 715px;
+	padding: 132px 24px 0;
+	.container {
+		max-width: 1160px;
+		margin: 0 auto;
+	}
+	.text {
+		max-width: 600px;
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		max-width: 400px;
+		margin-top: 80px;
+		padding: 40px 40px 54px 40px;
+		border-radius: 25px;
+		font-size: 29px;
+		line-height: 1.25em;
+		font-weight: bold;
+		color: white;
+		background: #005da9;
+	}
+}
+
+.banner-patient {
+	padding: 80px 0;
+	background: #290245 url('../img/bg-banner-patient.svg') no-repeat left -20px;
+	background-size: 64vw auto;
+}
+
+.banner-inbrija {
+	background: #3f1749 url('../img/products/inbrija/hero-circle.webp') no-repeat right top;
+	background-size: 30vw auto;
+	@media (min-width: 1800px){
+		background-size: auto 95%;
+	}
+	.container-inbrija {
+		position: relative;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 25px;
+		@media (min-width: 768px) {
+			padding: 25px 9vw;
+		}
+		img {
+			max-width: 60vw;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+COOKIES
+**/
+div#tarteaucitronRoot{
+	@apply bg-purple bg-opacity-80 bottom-0 top-auto fixed z-50 backdrop-blur-sm;
+}
+
+div#tarteaucitronRoot.tarteaucitronBeforeVisible:before{
+	display: none;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig.tarteaucitronAlertBigTop{
+	@apply bg-transparent text-left w-10/12 px-0 py-3 static transform-none rounded-none shadow-none lg:max-w-5xl;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig.tarteaucitronAlertBigTop::before{
+	content: "Uso de cookies";
+	@apply text-xl font-bold;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig span#tarteaucitronDisclaimerAlert{
+	@apply text-xs text-left p-0;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronPersonalize2,
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronAllDenied2,
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronCloseAlert,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo #tarteaucitronPrivacyUrlDialog,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button{
+	font-size: 13px !important;
+	@apply bg-purple text-white font-bold leading-none capitalize tracking-wider px-4 py-2.5 opacity-100 rounded-xl select-none;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo #tarteaucitronPrivacyUrlDialog,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button{
+	@apply bg-transparent;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices{
+	@apply shadow-none rounded-xl;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset{
+	@apply bg-purple pb-14;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #dialogTitle{
+	@apply text-xl font-bold select-none;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo{
+	@apply bg-transparent text-sm;
+	border: none !important;
+	padding: 0 1.5rem 2.5rem !important;
+	margin: 0 !important;
+	max-width: 100% !important;
+
+	> *,
+	p > *{ color: white; }
+
+	p{
+		font-weight: 300;
+	}
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo > strong{
+	font-size: 1.1rem;
+	@apply font-bold w-full pb-2 block;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p + p{
+	@apply mt-7;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p{
+	@apply text-sm;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p > strong{
+	@apply text-base font-bold block;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronName{
+	padding-left: 1.5rem;
+	width: 35% !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk{
+	@apply px-6;
+	display: flex !important;
+}
+
+@media (min-width: 768px){
+	body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk{
+		width: 50% !important;
+		margin: 0;
+	}
+}
+
+body #tarteaucitronRoot .tarteaucitronBorder{
+	@apply bg-purple pt-5;
+	border-top: solid 1px rgba(255,255,255,.2) !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronBorder .tarteaucitronTitle > button{
+	@apply bg-black bg-opacity-20 select-none;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine{
+	@apply bg-transparent;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName{
+	@apply text-white ml-0 md:pl-6;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName *{
+	color: #FFF !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk{
+	@apply mr-0 md:pr-6;
+}
+
+
+
+
+body #tarteaucitronRoot .tarteaucitronSelfLink{
+	display: none;
+}
+
+body #tarteaucitronRoot #tarteaucitronClosePanel{
+	@apply bg-transparent text-purple select-none;
+}
+
+body.tarteaucitron-modal-open #tarteaucitronRoot.tarteaucitronBeforeVisible #tarteaucitron{
+	height: 100vh !important;
+	position: fixed;
+	bottom: 0px !important;
+	top: auto !important;
+	max-height: 100vh !important;
+	max-width: 100vw !important;
+	padding: 0 30px;
+	display: grid !important;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+body.tarteaucitron-modal-open #tarteaucitronRoot.tarteaucitronBeforeVisible #tarteaucitron #tarteaucitronClosePanel{
+	right: 14px;
+	top: 12vh;
+	position: absolute;
+}
+
+body.tarteaucitron-modal-open #tarteaucitronRoot.tarteaucitronBeforeVisible #tarteaucitron #tarteaucitronServices{
+	height: 70% !important;
+}
+
+
+
+
+.tarteaucitron-modal-open #tarteaucitronRoot{ top: 0; }

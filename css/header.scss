@@ -1,0 +1,136 @@
+@tailwind components;
+
+@layer components{
+	#mainHeader{
+		@apply 
+		relative
+		select-none
+		z-30
+		md:pb-5;
+	}
+
+	#mainHeader--topbar{
+		@apply 
+		pl-20
+		pr-6 
+		py-2 
+		justify-between 
+		items-center 
+		flex
+		md:pl-36
+		lg:pl-44
+		lg:pb-7;
+
+		.nav{
+			@apply 
+			hidden 
+			text-sm 
+			leading-none 
+			whitespace-nowrap 
+			items-center 
+			gap-x-5 
+			select-none
+			sm:flex;
+
+			.nav-link{
+				@apply 
+				text-white 
+				dark:text-slate-700;
+			}
+
+			.nav-button{
+				@apply 
+				bg-prod-purple 
+				text-white 
+				text-sm 
+				px-5 
+				pt-1 
+				pb-1.5 
+				block 
+				rounded-lg 
+				transition-all
+				hover:opacity-80;
+			}
+		}
+	}
+
+
+	#mainNavbar{
+		@apply 
+		border-b
+		overflow-hidden
+		h-0
+		md:overflow-visible
+		md:h-auto
+		md:border-none;
+	}
+
+
+	#mainMenu{
+		@apply 
+		leading-none 
+		w-full
+		max-w-5xl 
+		px-6
+		mx-auto 
+		pb-8
+		select-none
+		space-y-4
+		md:space-y-0
+		md:px-0
+		md:flex
+		md:pb-0;
+
+		.menu-item{
+			@apply 
+			text-white 
+			leading-tight
+			flex 
+			flex-1 
+			items-center 
+			md:text-center 
+			md:justify-center
+			md:text-sm
+			md:leading-tight
+			dark:text-slate-700;
+		}
+
+		.menu-item + .menu-item{
+			@apply 
+			md:border-l
+			md:border-white
+			md:dark:border-purple;
+		}
+
+		.menu-link{
+			@apply 
+			h-full 
+			px-3
+			flex 
+			items-center
+			relative
+			md:max-w-[180px];
+
+			&.router-link-active::after{
+				content: '';
+				background-image: url("data:image/svg+xml,%0A%3Csvg width='24px' height='9px' viewBox='0 0 24 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Distr.-Depresion-y-Ansiedad' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Distribuidora-Depresion-y-Ansiedad' transform='translate(-299.000000, -201.000000)' fill='%23FFFFFF'%3E%3Cpolygon id='Triangle-Copy-2' points='311 201 323 210 299 210'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+				
+				@apply 
+				bg-no-repeat
+				w-[24px]
+				h-[9px]
+				ml-[-9px]
+				absolute
+				hidden
+				bottom-[-12px]
+				left-1/2
+				md:block;
+			}
+		}
+	}
+
+
+
+
+}
+
